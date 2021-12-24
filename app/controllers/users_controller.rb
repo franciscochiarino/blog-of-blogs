@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(permitted_params)
     
     if @user.save
-      redirect_to root_path, notice: 'User created.'
+      perform_login_action(params[:user][:email], params[:user][:password])
     else
       render :new
     end
