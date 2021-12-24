@@ -1,19 +1,33 @@
 = form_with model: @user, local: true, html: { 'data-turbo': 'false' } do |f|
   %div
+    = f.label :blog_name
+    = f.text_field :blog_name
+    - @user.errors.full_messages_for(:blog_name).each do |message|
+      %p= message
+
+  %div
     = f.label :first_name
     = f.text_field :first_name
+    - @user.errors.full_messages_for(:first_name).each do |message|
+      %p= message
 
   %div
     = f.label :last_name
     = f.text_field :last_name
+    - @user.errors.full_messages_for(:last_name).each do |message|
+      %p= message
 
   %div
     = f.label :email
     = f.email_field :email
+    - @user.errors.full_messages_for(:email).each do |message|
+      %p= message
 
   %div
     = f.label :password
     = f.password_field :password
+    - @user.errors.full_messages_for(:password).each do |message|
+      %p= message
 
   %div
     = f.submit
