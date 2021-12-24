@@ -45,7 +45,11 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+# To avoid messy markup
 gem 'haml'
+
+# For having cool urs
+gem 'friendly_id', '~> 5.4.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

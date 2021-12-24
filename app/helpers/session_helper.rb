@@ -4,7 +4,7 @@ module SessionHelper
 
     if user&.authenticate(password.downcase)
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Logged in successfully.'
+      redirect_to user_path(user), notice: 'Logged in successfully.'
     else
       render :new
     end

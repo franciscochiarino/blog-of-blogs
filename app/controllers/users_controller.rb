@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.friendly.find(params[:id])
+  end
+
   def create
     @user = User.new(permitted_params)
     
@@ -16,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def permitted_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:blog_name, :first_name, :last_name, :email, :password)
   end
 end
