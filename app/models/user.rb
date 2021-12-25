@@ -3,6 +3,7 @@ class User < ApplicationRecord
   friendly_id :blog_name, use: :slugged
 
   has_secure_password
+  has_many :posts
 
   validates :blog_name,  presence: true
   validates :first_name, presence: true
