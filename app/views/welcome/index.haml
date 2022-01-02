@@ -1,4 +1,24 @@
-%h1 This is the welcome page
+%h1 Welcome
+
+%h2 Meet our bloggers
+%table
+  %tr
+    %th First Name
+    %th Last Name
+    %th Link to blog
+  - @users.each do |user|
+    %tr
+      %td= user.first_name
+      %td= user.last_name
+      %td= link_to user.blog_name, user_path(user)
+
+
+%h2 Check our posts
+- @posts.each do |post|
+  %h3= post.title
+  %strong= post.user.first_name
+  %p= post.body
+  = link_to 'Show', user_post_path(post.user.slug, post.slug)
 
 - if logged_in?
   = link_to 'Log out', logout_path, data: { 'turbo-method': 'delete' }
