@@ -1,11 +1,13 @@
-= form_with scope: :session, url: login_path, html: { 'data-turbo': 'false' } do |f|
-  %div
-    = f.label :email
-    = f.email_field :email
+%section.container
+  = form_with scope: :session, url: login_path, html: { 'data-turbo': 'false' } do |f|
+    .d-flex.flex-column.align-items-center.my-4
+      .my-2
+        = f.label :email, class: 'visually-hidden'
+        = f.email_field :email, placeholder: 'email@example.com', class: 'form-control'
 
-  %div
-    = f.label :password
-    = f.password_field :password
+      .my-2
+        = f.label :password, class: 'visually-hidden'
+        = f.password_field :password, placeholder: 'Password', class: 'form-control'
 
-  %div
-    = f.submit 'Log in'
+      .my-4
+        = f.submit 'Log in', class: 'btn btn-success'
