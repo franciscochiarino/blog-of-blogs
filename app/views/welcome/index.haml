@@ -9,16 +9,13 @@
         .col
           = render CardComponent.new(img: 'defaults/avatar.png', title: user.blog_name, text: 'Some quick example text to build on the card title and make up the bulk of the cards content.', href: user_path(user))
 
-  %h2 Check our posts
-  - @posts.each do |post|
-    %h3= post.title
-    %strong= post.user.first_name
-    %p= post.body
-    = link_to 'Show', user_post_path(post.user.slug, post.slug)
+  .container.my-5
+    %h2.mb-4 Check our posts
 
-  - if logged_in?
-    = link_to 'Log out', logout_path, data: { 'turbo-method': 'delete' }
-    = link_to 'My blog', user_path(current_user)
-  - else
-    = link_to 'Sign up', signup_path
-    = link_to 'Log in', login_path
+    - @posts.each do |post|
+      .my-4
+        %h3= post.title
+        %strong= "Author: #{post.user.first_name}"
+        %p= post.body        
+        = link_to 'Go to post', user_post_path(post.user.slug, post.slug), class: 'btn btn-primary'        
+        = link_to 'Go to blog', user_path(post.user.slug), class: 'btn btn-secondary'
