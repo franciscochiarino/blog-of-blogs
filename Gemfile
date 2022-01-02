@@ -48,6 +48,9 @@ gem "bootsnap", require: false
 # To avoid messy markup
 gem 'haml'
 
+# For having components
+gem 'view_component'
+
 # For having cool urs
 gem 'friendly_id', '~> 5.4.0'
 
@@ -76,5 +79,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "tailwindcss-rails", "~> 2.0"
