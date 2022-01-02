@@ -1,33 +1,35 @@
-= form_with model: @user, local: true, html: { 'data-turbo': 'false' } do |f|
-  %div
-    = f.label :blog_name
-    = f.text_field :blog_name
-    - @user.errors.full_messages_for(:blog_name).each do |message|
-      %p= message
+.container
+  = form_with model: @user, local: true, html: { 'data-turbo': 'false' } do |f|
+    .d-flex.flex-column.align-items-center.my-4
+      .my-2
+        = f.label :blog_name, class: 'visually-hidden'
+        = f.text_field :blog_name, placeholder: 'Blog name', class: 'form-control'
+        - @user.errors.full_messages_for(:blog_name).each do |message|
+          %p= message
 
-  %div
-    = f.label :first_name
-    = f.text_field :first_name
-    - @user.errors.full_messages_for(:first_name).each do |message|
-      %p= message
+      .my-2
+        = f.label :first_name, class: 'visually-hidden'
+        = f.text_field :first_name, placeholder: 'First name', class: 'form-control'
+        - @user.errors.full_messages_for(:first_name).each do |message|
+          %p= message
 
-  %div
-    = f.label :last_name
-    = f.text_field :last_name
-    - @user.errors.full_messages_for(:last_name).each do |message|
-      %p= message
+      .my-2
+        = f.label :last_name, class: 'visually-hidden'
+        = f.text_field :last_name, placeholder: 'Last name', class: 'form-control'
+        - @user.errors.full_messages_for(:last_name).each do |message|
+          %p= message
 
-  %div
-    = f.label :email
-    = f.email_field :email
-    - @user.errors.full_messages_for(:email).each do |message|
-      %p= message
+      .my-2
+        = f.label :email, class: 'visually-hidden'
+        = f.email_field :email, placeholder: 'email@example.com', class: 'form-control'
+        - @user.errors.full_messages_for(:email).each do |message|
+          %p= message
 
-  %div
-    = f.label :password
-    = f.password_field :password
-    - @user.errors.full_messages_for(:password).each do |message|
-      %p= message
+      .my-2
+        = f.label :password, class: 'visually-hidden'
+        = f.password_field :password, placeholder: 'Password', class: 'form-control'
+        - @user.errors.full_messages_for(:password).each do |message|
+          %p= message
 
-  %div
-    = f.submit
+      .my-4
+        = f.submit 'Create an account', class: 'btn btn-success'

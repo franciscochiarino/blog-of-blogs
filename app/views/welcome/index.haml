@@ -1,7 +1,7 @@
-.container-xl.mt-5
+.container.mt-5
   %h1.text-center Blog of Blogs
 
-  .container.my-5
+  %section.container.my-5
     %h2.mb-4 Meet our bloggers
   
     .d-flex.flex-wrap.justify-content-evenly
@@ -9,7 +9,7 @@
         .my-3
           = render CardComponent.new(img: 'defaults/avatar.png', title: user.blog_name, text: 'Some quick example text to build on the card title and make up the bulk of the cards content.', href: user_path(user))
 
-  .container.my-5
+  %section.container.my-5
     %h2.mb-4 Check our posts
 
     - @posts.each do |post|
