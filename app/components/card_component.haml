@@ -1,0 +1,7 @@
+.card{ style: 'width: 18rem;' }
+  .card-img.text-center.p-3
+    = image_tag @img, class: 'rounded-circle', size: '100x100'
+  .card-body
+    %h5.card-title= @title
+    %p.card-text= @text
+    = link_to 'Go to blog', @href, class: 'btn btn-primary'

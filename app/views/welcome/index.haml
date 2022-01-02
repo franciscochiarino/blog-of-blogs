@@ -1,18 +1,13 @@
-.container-xl
-  %h1.text-center.mt-5 Blog of Blogs
+.container-xl.mt-5
+  %h1.text-center Blog of Blogs
 
-  %h2.mt-4 Meet our bloggers
-  %table
-    %tr
-      %th First Name
-      %th Last Name
-      %th Link to blog
-    - @users.each do |user|
-      %tr
-        %td= user.first_name
-        %td= user.last_name
-        %td= link_to user.blog_name, user_path(user)
-
+  .container.my-5
+    %h2.mb-4 Meet our bloggers
+  
+    .row.row-cols-3
+      - @users.each do |user|
+        .col
+          = render CardComponent.new(img: 'defaults/avatar.png', title: user.blog_name, text: 'Some quick example text to build on the card title and make up the bulk of the cards content.', href: user_path(user))
 
   %h2 Check our posts
   - @posts.each do |post|
