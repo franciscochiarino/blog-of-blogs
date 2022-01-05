@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :last_name,  presence: true
   validates :email,      presence: true
   validates :password,   length: { in: 6..20 }
+  
+  def full_name
+    "#{self.first_name.titleize} #{self.last_name.titleize}"
+  end
 end
