@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'posts', to: 'posts#index'
+  get 'users', to: 'users#index'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

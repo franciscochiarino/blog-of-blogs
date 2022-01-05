@@ -1,8 +1,13 @@
-%h1= "Welcome to #{@user.blog_name}"
+.container.my-5
+  .text-center
+    %h1= "Welcome to #{@user.blog_name}"
+    %p= "Written by #{@user.full_name}"
 
-#posts
-  - @user.posts.each do |post|
-    = render 'posts/post', post: post
+  %section#posts.container.my-5
+    - @user.posts.each do |post|
+      .border.rounded
+        .my-3
+          = render 'posts/post', post: post
 
-- if logged_in?
-  = link_to 'Create post', new_user_post_path(@user)
+  - if logged_in?
+    = link_to 'Create post', new_user_post_path(@user)
