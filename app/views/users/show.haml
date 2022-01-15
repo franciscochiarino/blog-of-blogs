@@ -10,4 +10,5 @@
           = render 'posts/post', post: post
 
   - if logged_in?
-    = link_to 'Create post', new_user_post_path(@user)
+    .text-center
+      = link_to 'New Post', new_user_post_path(@user), class: 'btn btn-primary'
