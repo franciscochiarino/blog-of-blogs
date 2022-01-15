@@ -51,8 +51,11 @@ gem 'haml'
 # For having components
 gem 'view_component'
 
-# For having cool urs
+# For having cool urls
 gem 'friendly_id', '~> 5.4.0'
+
+# For having fake data [https://github.com/faker-ruby/faker.git]
+gem 'faker'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
