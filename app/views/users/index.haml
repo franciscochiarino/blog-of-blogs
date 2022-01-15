@@ -4,4 +4,4 @@
   .d-flex.flex-wrap.justify-content-evenly
     - @users.each do |user|
       .my-3
-        = render CardComponent.new(img: 'defaults/avatar.png', title: user.blog_name, text: 'Some quick example text to build on the card title and make up the bulk of the cards content.', href: user_path(user))
+        = render CardComponent.new(img: user.avatar_url, title: user.full_name, text: 'Some quick example text to build on the card title and make up the bulk of the cards content.', href: user_path(user))
