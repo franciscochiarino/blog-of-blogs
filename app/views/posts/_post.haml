@@ -3,4 +3,4 @@
 .text-center{ id: "post_#{post.id}" }
   - unless no_title
     %h2.mb-4= post.title
-  %p.mb-4= post.body
+  %p.mb-4= raw(post.body)
