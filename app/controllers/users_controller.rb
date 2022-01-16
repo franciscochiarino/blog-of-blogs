@@ -1,3 +1,5 @@
+require 'faker'
+
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -13,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    generate_avatar if params[:user][:avatar_url].nil?
+
     @user = User.new(permitted_params)
     
     if @user.save
@@ -26,5 +30,9 @@ class UsersController < ApplicationController
 
   def permitted_params
     params.require(:user).permit(:blog_name, :first_name, :last_name, :avatar_url, :email, :password)
+  end
+
+  def generate_avatar
+    params[:user][:avatar_url] = Faker::Avatar.image(slug: params[:user][:first_name], size: "200x200")
   end
 end
