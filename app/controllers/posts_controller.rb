@@ -13,8 +13,13 @@ class PostsController < ApplicationController
 
   def create
     @user = User.friendly.find(params[:user_id])
-    @post = @user.posts.create(permitted_params)
-    redirect_to user_path(@user)
+    @post = @user.posts.new(permitted_params)
+    
+    if @post.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   private

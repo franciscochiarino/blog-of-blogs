@@ -4,10 +4,12 @@
       .my-2
         = f.label :title, class: 'visually-hidden'
         = f.text_field :title, placeholder: 'Title', class: 'p-1'
+        = render ErrorMessageComponent.new(model: @post, field: :title)
 
       .mt-5.mb-3
         = f.label :body, class: 'visually-hidden'
         = f.rich_text_area :body, placeholder: 'A long time ago in a galaxy far far away...'
+        = render ErrorMessageComponent.new(model: @post, field: :body)
 
       .my-3
         = f.submit 'Create Post', class: 'btn btn-success'

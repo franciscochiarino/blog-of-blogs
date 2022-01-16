@@ -1,0 +1,9 @@
+.c-error-message
+  - @model.errors.full_messages_for(@field).each do |message|
+    %p.mb-0= message
+
+:css
+  .c-error-message {
+    font-size: .8rem;
+    color: crimson
+  }
