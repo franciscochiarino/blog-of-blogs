@@ -1,11 +1,13 @@
-= form_with model: [@user, @user.posts.build], html: { 'data-turbo': 'false' } do |f|
-  %div
-    = f.label :title
-    = f.text_field :title
+%section.container
+  = form_with model: [@user, @user.posts.build], html: { 'data-turbo': 'false' } do |f|
+    .d-flex.flex-column.align-items-center.my-4
+      .my-2
+        = f.label :title, class: 'visually-hidden'
+        = f.text_field :title, placeholder: 'Title', class: 'p-1'
 
-  %div
-    = f.label :body
-    = f.rich_text_area :body
+      .mt-5.mb-3
+        = f.label :body, class: 'visually-hidden'
+        = f.rich_text_area :body, placeholder: 'A long time ago in a galaxy far far away...'
 
-  %div
-    = f.submit
+      .my-3
+        = f.submit 'Create Post', class: 'btn btn-success'
