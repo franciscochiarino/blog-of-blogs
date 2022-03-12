@@ -57,6 +57,9 @@ gem 'friendly_id', '~> 5.4.0'
 # For having fake data [https://github.com/faker-ruby/faker.git]
 gem 'faker'
 
+# For ENV variables
+gem 'figaro'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
